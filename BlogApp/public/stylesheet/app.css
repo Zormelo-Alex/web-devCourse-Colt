@@ -1,0 +1,35 @@
+i.icon{
+    font-size: 1.5em;
+}
+.container.main{
+    margin-top: 7em;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.rights{
+    width: 70%;
+    display: flex;
+    justify-content: end;
+    margin-left: 50px;
+}
+.title{
+    text-transform: capitalize;
+}
+.input{
+    width: 250px;
+    font-size: medium;
+    padding: 2px 12px;
+    border-radius: 7px;
+    height: 3rem;
+    border: 1px groove gray;
+    box-shadow: 0px 0px 2px 0px gray;
+}
+.btn{
+    padding: 0px 27px;
+    height: 2.8rem;
+}
+.space{
+    margin-top: 3em;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/auth/register" method="post">
+        <label for="">Username</label>
+        <input type="text" name="username" placeholder="username"><br>
+        <label for="">Password</label>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Sign Up">
+    </form>
+    
+
+    <ul>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/register">Register</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+
+    <div>
+        <h4>users</h4>
+        <% data.forEach((user)=>{ %>
+            <p><b><%= user.username %></b> - <%= user._id %> </p>
+        <% }) %> 
+    </div>
+</body>
+</html>

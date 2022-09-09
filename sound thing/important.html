@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./paper-full.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/paperscript" canvas="myCanvas">
+        //using a loop to create circles on different x and y axis/positions
+        for(var y = 0; y <= 1000; y+= 50){
+            for(var x = 0; x <= 1000; x+= 50){
+                var myCircle = new Path.Circle(new Point(x, y), 10);
+                myCircle.fillColor = "yellow";
+            }
+        }
+        //size of screen
+        console.log(view.size.height);
+        console.log(view.size.width);
+
+        //making a circle animation
+        var animatedCircle = new Path.Circle(new Point(100,100),30);
+        animatedCircle.fillColor = "red";
+        //frame changes color
+        animatedCircle.fillColor.hue += 1;
+        //frame changes size/scale
+        animatedCircle.scale(.9);
+
+    </script>
+    <title>paperscript</title>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>

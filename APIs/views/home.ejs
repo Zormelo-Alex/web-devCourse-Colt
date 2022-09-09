@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <div>
+        <% for(var i = 0; i < parsedData.length; i++){ %>
+        <div><%= parsedData[i].Title %></div>
+        <div><img src="<%= parsedData[i].Poster %>" alt="use internet"></div>
+        <p>Year: <b><%= parsedData[i].Year %></b></p>
+        <% } %>
+        <a href="/"><b>Back</b></a>
+    </div>
+</body>
+</html>

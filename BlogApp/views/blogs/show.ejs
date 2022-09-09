@@ -1,0 +1,59 @@
+<%- include("../partials/header") -%>
+
+<div class="ui main text container segment">
+    <div class="ui header huge" style="text-transform: capitalize;"><%= blog.title%></div>
+    <div class="ui top attached">
+        <div class="item">
+            <div class="ui centered rounded image"><img style="width: 750px;" src="<%= blog.image %> " alt=""></div>
+            <div class="content"><span><i><b>By <%= blog.user.username %></b></i></span> </div>
+            <div class="content"><span><%= blog.created.toDateString(); %> </span> </div>
+            <div class="description"><p><%- blog.post%> </p></div>
+            <% if(user){ %> 
+                <% if(user._id.equals(blog.user.id)){ %> 
+                    <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">edit</a>
+                    <a class="ui red basic button" href="/blogs/<%= blog._id %>/destroy">delete</a>
+                <% } %> 
+            <% } %> 
+        </div>
+    </div> 
+</div>
+<div class="container ui text">
+    <form action="/blogs/<%= blog._id %>/comments" method="post">
+        <input class="input" type="text" placeholder="comment" name="content">
+        <input class="btn" type="submit" value="Post">
+    </form>
+</div>
+<div class="container ui text segment">
+    <p style="cursor: pointer;" class="drop-comments"><i><b><%= numOfComments %> comments...</b></i> </p>
+    <% blog.comments.forEach((comment)=>{ %> 
+        <p class="segment text ui comments">
+            <b><span><%= comment.user.username  %> - </span></b>
+            <span><%= comment.content  %></span>
+            <% if(user){ %> 
+                <% if(user._id.equals(comment.user.id)){ %> 
+                    <span><a href="/blogs/<%= blog._id %>/comment/<%= comment._id %>/edit">Edit</a></span>
+                    <span><a href="/blogs/<%= blog._id %>/comment/<%= comment._id %>/delete">Delete</a></span>
+                <% } %> 
+            <% } %> 
+            
+        </p>
+    <% }); %> 
+</div>
+
+<script>
+    var drop = document.querySelector(".drop-comments");
+    var comment = document.querySelectorAll(".comments");
+    comment.forEach((comm)=>{
+        comm.style.display = "none";
+    });
+
+drop.addEventListener('click', ()=>{
+    comment.forEach((comm)=>{
+        comm.style.display = "block";
+    });
+});
+    
+</script>
+
+
+<%- include("../partials/footer") -%> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./paper-full.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./howler.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        
+        var sound =  new Howl({
+            urls: ['./sounds/bubbles.mp3'],
+        });
+
+        var Circles = [];
+    
+        function onKeyDown(e){
+            sound.play();
+            //getting the maximum screen of the user
+            var maxPoint = new Point(view.size.width, view.size.height);
+            //generating a random poin between the height and width of the device
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint; 
+            //make a circle when key is pressed
+                var myCircle = new Path.Circle(point, 300);
+                myCircle.fillColor = "yellow";
+                //adding every circle generated to an array
+               Circles.push(myCircle); 
+                console.log(e);
+                console.log(point);
+                
+                
+        }
+        
+
+        function onFrame(e){
+            //looping the colors array to add the function to each circle
+            for(var i = 0; i < Circles.length; i++){
+                Circles[i].fillColor.hue += 3;
+                Circles[i].scale(.9);
+            }
+            
+        }
+                
+    </script>
+    <title>sound thing</title>
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>

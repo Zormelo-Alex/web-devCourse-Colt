@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+    background-image: radial-gradient(red,white);
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    overflow-y: hidden;
+}
+h2{
+    margin: 0;
+    background-color: crimson;
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 90%;
+}
+input[type = "text"]{
+    width: 100%;
+    border: none;
+    margin: 0px;
+    padding: 7px 20px;
+    background-color: whitesmoke;
+    font-size: 19px;
+    color: crimson;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+input[type = 'text']:focus{
+    border: 1.5px solid crimson;
+    background-color: rgb(245, 237, 237);
+    outline: none;
+    color: crimson;
+    transition: all .3s ease-in-out;
+}
+ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    min-height: 100px;
+    max-height: 350px;
+    overflow-y: hidden;
+}
+ul:hover{
+    overflow-y: scroll;
+}
+li{
+    background-color: rgb(231, 225, 225);
+    padding: 7px 20px;
+    color: rgb(27, 27, 27);
+    font-size: 20px;
+    cursor: pointer;
+}
+li:nth-child(2n){
+    background-color: white;
+}
+.container{
+    width: 360px;
+    box-shadow: 0px 0px 5px 0px grey;
+    margin: 100px auto;
+    background-color: rgb(173, 169, 169);
+}
+.completed{
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+li span{
+    background-color: crimson;
+    padding: 7.5px;
+    margin-right: 5px;
+    display: none;
+    cursor: pointer;
+}
+li:hover{
+    padding: 7px 0px;
+}
+li:hover span{
+    display: inline;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.icon{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+    color: white;
+    background-color: crimson;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.image img{
+    height: 210px;
+    width: 300px;
+}
+
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background-image: linear-gradient(95deg, rgb(65, 63, 63), rgb(150, 146, 146));
+}
+
+.frontpage{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.frontpage h1{
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 56px;
+    text-transform: uppercase;
+    padding: 1em;
+    color: whitesmoke;
+}
+.frontpage .links a{
+    margin-right: 1.5em;
+    text-transform: capitalize;
+    font-weight: normal;
+}
